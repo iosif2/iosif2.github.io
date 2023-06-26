@@ -1,0 +1,56 @@
+.roundeddivs {
+    background: white;
+    white-space: nowrap;
+    padding: 20px 25px;
+    border-radius: 44px;
+    max-height: "1px";
+    width: auto;
+    margin: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.block {
+    padding: 6rem 2rem;
+    width: 80vw;
+}
+
+.marquees {
+    margin: 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.marquees>* {
+    white-space: nowrap;
+    display: flex;
+    width: fit-content;
+    animation: move var(--d) linear infinite;
+}
+
+.marquees>*:nth-child(1) {
+    --d: 9s;
+}
+
+.marquees>*:nth-child(2) {
+    --d: 15s;
+}
+
+.marquees>*:nth-child(3) {
+    --d: 8s;
+}
+
+.marquees>*:nth-child(4) {
+    --d: 15ss;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

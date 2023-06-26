@@ -1,0 +1,14 @@
+body {
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    
+}
+h1 {
+    font-size: 60px;
+    margin: 0;
+    padding: 30px 0 8px;
+    position: relative;
+    font-weight: bold;
+}
