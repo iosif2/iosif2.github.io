@@ -1,0 +1,38 @@
+@keyframes slideAnimation {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .looper {
+    padding: 10px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .looper__innerList {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+  }
+  
+  .looper__listInstance {
+    display: flex;
+    width: max-content;
+  
+    animation: slideAnimation linear infinite;
+  }
+
+  .looper__innerList[data-animate="true"] .looper__listInstance {
+    animation: slideAnimation linear infinite;   
+  }
+  
+  .looper__listInstance {
+    display: flex;
+    width: max-content;
+  
+    animation: none;
+  }
