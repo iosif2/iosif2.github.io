@@ -1,6 +1,8 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import InfiniteLooper from "./InfiniteLooper";
+import GoogleLoginButton from "./GoogleLoginButton";
 
 const svgs = {
   github: (
@@ -23,15 +25,34 @@ const svgs = {
 };
 
 function Home() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [auth, setAuth] = useState();
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setAuth(false);
+  };
   return (
     <div className="Home">
       <div>
         <h1>iosif.dev</h1>
-        <button onClick={()=>{navigate("/login")}}>Login</button>
+        {auth ? (
+          <div>
+            <h2>Welcome {JSON.parse(localStorage.getItem("user")).name}</h2>
+            <button className="logout" onClick={handleLogout}>
+              Logout
+            </button>
+          </div>
+        ) : (
+          <GoogleLoginButton setAuth={setAuth} />
+        )}
         <InfiniteLooper speed="4" direction="right">
           <div className="contentBlock contentBlock--one">
-            <div onClick={()=>{window.location.href = "http://github.com/iosif2"}}>
+            <div
+              onClick={() => {
+                window.location.href = "http://github.com/iosif2";
+              }}
+            >
               {svgs.github}
               {svgs.linux}
               {svgs.python}

@@ -1,14 +1,17 @@
-import GoogleLoginPage from "./GoogleLoginPage";
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 
 function App() {
+
   return (
-    <div>
-    <Routes>
-      <Route exact path="/" element={<Home/>} />
-      <Route path="/login" element={<GoogleLoginPage/>} />
-    </Routes>
+    <div className="App">
+      <Routes>
+        <Route
+          path="/"
+          element={<Home />}
+        />
+      </Routes>
     </div>
   );
 }
